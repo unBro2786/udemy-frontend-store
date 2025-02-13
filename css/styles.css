@@ -1,0 +1,141 @@
+:root{
+    --primario: #9C27B0;
+    --primario-oscuro: #8911BD;
+    --secundario: #FFCE00;
+    --secundario-oscuro: rgb(233, 287, 2);
+    --blanco: white;
+    --negro: black;
+
+    --fuentePrincipal: 'Staatliches', cursive;
+}
+
+/** Box Model **/
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/** General text siezes **/
+body {
+    background-color: var(--primario);
+}
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+h3{
+    font-size: 2.4rem;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: var(--secundario);
+    font-family: var(--fuentePrincipal);
+}
+
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--blanco);
+}
+a {
+    text-decoration: none;
+}
+
+/** Header **/
+.header {
+    margin-top: 1rem;
+    display: flex;
+    justify-content:center ;
+}
+
+/** Footer **/
+.footer {
+    font-family: var(--fuentePrincipal);
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.footer__texto {
+    background-color: var(--primario-oscuro);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+/** Navegacion **/
+.navegacion {
+    background-color: var(--primario-oscuro);
+    padding: 1rem;
+
+    display: flex;
+    justify-content:center;
+    gap: 2rem; /* Forma nueva (falta compatibilidad) */
+}
+
+.navegacion__enlace {
+    color: var(--blanco);
+    font-family: var(--fuentePrincipal);
+    font-size: 3rem;
+}
+
+.navegacion__enlace--activo,
+.navegacion__enlace:hover{
+    color: var(--secundario);
+}    
+
+/** Main **/
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+@media(min-width: 769px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/** Productos **/
+.producto {
+    background-color: var(--primario-oscuro);
+    padding: 1rem;
+}
+
+.producto__imagen {
+    width: 100%;
+}
+
+.producto__informacion {
+}
+
+.producto__nombre {
+    font-size: 4rem;
+}
+
+.producto__precio {
+    font-size: 2.8rem;
+    color: var(--secundario);
+}
+
+.producto__nombre,
+.producto__precio {
+    font-family: var(--fuentePrincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 2rem;
+}
